@@ -1,6 +1,8 @@
 import requests
 import argparse
 
+# https://portswigger.net/web-security/sql-injection/union-attacks/lab-determine-number-of-columns
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--target", help="Specify a target. \nE.g. -t https://abcdefghijk1234567.web-security-academy.net")
 args = parser.parse_args()
