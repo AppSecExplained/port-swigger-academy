@@ -2,6 +2,8 @@ import requests
 import argparse
 import bs4
 
+# https://portswigger.net/web-security/sql-injection/union-attacks/lab-retrieve-data-from-other-tables
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--target", help="Specify a target. E.g. -t https://abcdefghijk1234567.web-security-academy.net")
 args = parser.parse_args()
