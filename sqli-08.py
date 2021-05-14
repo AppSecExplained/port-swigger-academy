@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 if not args.target:
     print("[!] You need to specify a target.")
-    print("[*] Example usage: sqli-06.py -t https://abcdefghijk1234567.web-security-academy.net")
+    print("[*] Example usage: sqli-08.py -t https://abcdefghijk1234567.web-security-academy.net")
     exit(0)
 
 # test the connection to the target
